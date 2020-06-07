@@ -2,21 +2,20 @@ alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố
 
 function onBodyLoaded() {
     pauseAllVideo()
-    setAframeSceneEvent()
+    setTimeoutLoadData()
 }
 
-function setAframeSceneEvent() {
-    const scene = document.querySelector('a-scene')
+function setTimeoutLoadData() {
+    setTimeout(() => {
+        setAccessButtonContent()
+        addAccessButtonEvent()
 
-    if (scene != null) {
-        scene.addEventListener('loaded', () => {
-            setAccessButtonContent()
-            addAccessButtonEvent()
-            toggleCameraPointerLockControl(true)
-            modelViewerCloseButtonEvent()
-            setupAllViewerThings()
-        })
-    }
+        toggleCameraPointerLockControl(true)
+
+        modelViewerCloseButtonEvent()
+
+        setupAllViewerThings()
+    }, 10000)
 }
 
 function setAccessButtonContent() {
