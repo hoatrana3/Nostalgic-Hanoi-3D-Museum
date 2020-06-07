@@ -6,7 +6,9 @@ function onBodyLoaded() {
 }
 
 function setTimeoutLoadData() {
-    setTimeout(() => {
+    const timeout = setTimeout(function () {
+        console.log('Timeout load data!')
+
         setAccessButtonContent()
         addAccessButtonEvent()
 
@@ -16,6 +18,8 @@ function setTimeoutLoadData() {
 
         setupAllViewerThings()
     }, 10000)
+
+    console.log(timeout)
 }
 
 function setAccessButtonContent() {
