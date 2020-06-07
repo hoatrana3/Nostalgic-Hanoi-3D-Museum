@@ -3,14 +3,16 @@ alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố
 function onBodyLoaded() {
     pauseAllVideo()
 
-    setAccessButtonContent()
-    addAccessButtonEvent()
+    setTimeout(function () {
+        setAccessButtonContent()
+        addAccessButtonEvent()
 
-    toggleCameraPointerLockControl(true)
+        toggleCameraPointerLockControl(true)
 
-    modelViewerCloseButtonEvent()
+        modelViewerCloseButtonEvent()
 
-    setupAllViewerThings()
+        setupAllViewerThings()
+    }, 5000)
 }
 
 function setAccessButtonContent() {
