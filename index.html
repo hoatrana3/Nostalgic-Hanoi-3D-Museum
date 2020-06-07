@@ -270,7 +270,10 @@
             <img id="sky" src="assets/images/sky/sky1.jpg">
 
             <!-- Museum models -->
-            <a-assset-item id="museumGlb" src="assets/models/museum/museumThreeRoom.glb"></a-assset-item>
+            <a-assset-item id="ceilingGlb" src="assets/models/museum/ceiling.glb"></a-assset-item>
+            <a-assset-item id="grassGlb" src="assets/models/museum/grass.glb"></a-assset-item>
+            <a-assset-item id="wayGlb" src="assets/models/museum/way.glb"></a-assset-item>
+            <a-assset-item id="roomGlb" src="assets/models/museum/room.glb"></a-assset-item>
 
             <a-assset-item id="televisionGlb" src="assets/models/museum/inside/television.glb"></a-assset-item>
             <a-assset-item id="woodenTableGlb" src="assets/models/museum/inside/wooden_table.glb"></a-assset-item>
@@ -293,7 +296,8 @@
             </a-assset-item>
 
             <!-- Medias -->
-            <video id="trailerHanoi" autoplay="false" loop="false" src="assets/medias/trailer_hanoi.mp4"></video>
+            <video id="trailerHanoi" autoplay="false" loop="false" preload="auto"
+                src="assets/medias/trailer_hanoi.mp4"></video>
             <audio id="forestBirdSong" src="assets/medias/forest_bird_song.mp3" preload="auto"></audio>
             <audio id="classicalViolin" src="assets/medias/classical_violin.mp3" preload="auto"></audio>
 
@@ -393,18 +397,25 @@
         <a-sky src="#sky" rotation="0 180 0" scale="0.5 0.5 0.5"></a-sky>
 
         <!-- MUSEUM -->
-        <a-entity id="museum" gltf-model="#museumGlb" position="0 -25 0" shadow>
+        <a-entity id="museum" position="0 -25 0" shadow>
             <!-- Humman's eyes -->
-            <a-entity movement-controls="speed: .5" position="0.357 2 21.856">
+            <a-entity movement-controls="speed: .5" position="0 2 22">
                 <a-entity id="mainCamera" camera look-controls>
                     <a-cursor color="#FFFFFF"></a-cursor>
                 </a-entity>
             </a-entity>
 
+            <!-- Museum building -->
+            <a-entity gltf-model="#ceilingGlb" shadow></a-entity>
+            <a-entity gltf-model="#grassGlb" shadow></a-entity>
+            <a-entity gltf-model="#wayGlb" shadow></a-entity>
+            <a-entity gltf-model="#roomGlb" shadow></a-entity>
+
+            <!-- Museum outside -->
             <a-entity id="outside">
                 <!-- Sounds -->
                 <a-entity id="forestBirdSongSound" sound="src: #forestBirdSong; autoplay: true; loop: true"
-                    position="0 10 35"></a-entity>
+                    position="0 8 25"></a-entity>
 
                 <!-- Images Content -->
                 <a-entity gltf-model="#frameBlackLongGlb" position="-4.135 2.463 15.004" shadow museum-object
@@ -417,6 +428,7 @@
                 </a-entity>
             </a-entity>
 
+            <!-- Museum room front -->
             <a-entity id="roomFront">
                 <!-- Ceiling Center light -->
                 <a-entity position="0 6 0"
@@ -454,6 +466,7 @@
                 </a-entity>
             </a-entity>
 
+            <!-- Museum room 1 -->
             <a-entity id="room1">
                 <!-- Ceiling Room 1 light -->
                 <a-entity position="-20.518 4.9 13.579"
@@ -557,6 +570,7 @@
                 </a-entity>
             </a-entity>
 
+            <!-- Museum room 2 -->
             <a-entity id="room2">
                 <!-- Ceiling Room 2 light -->
                 <a-entity position="0 4.9 -23.318"
@@ -647,6 +661,7 @@
                 </a-entity>
             </a-entity>
 
+            <!-- Museum room 3 -->
             <a-entity id="room3">
                 <!-- Ceiling Room 3 light -->
                 <a-entity position="22.600 4.9 13.643"
