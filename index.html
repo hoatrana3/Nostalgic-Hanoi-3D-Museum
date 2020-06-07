@@ -58,8 +58,8 @@
                 </div>
 
                 <button type="button" id="access-btn">
-                    <span>Xem triển lãm</span>
-                    <i class="fas fa-arrow-right"></i>
+                    <span id="access-btn-text">Đang tải dữ liệu</span>
+                    <i id="access-btn-icon" class="fas fa-spinner"></i>
                 </button>
             </div>
         </div>
@@ -164,8 +164,7 @@
         <div id="model-view-close-btn">
             <i class="fas fa-times"></i>
         </div>
-        <model-viewer id="model-viewer" src="assets/models/museum/museumThreeRoom.glb" alt="" auto-rotate
-            camera-controls shadow-intensity="1"></model-viewer>
+        <model-viewer id="model-viewer" src="" alt="" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
     </div>
 
     <!-- OTHER VIEWER IMAGES -->
@@ -414,12 +413,9 @@
             <!-- Museum outside -->
             <a-entity id="outside">
                 <!-- Sounds -->
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true"
-                    position="0 8 35"></a-entity>
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true"
-                    position="35 8 -35"></a-entity>
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true"
-                    position="-35 8 -35"></a-entity>
+                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="0 8 35"></a-entity>
+                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="35 8 -35"></a-entity>
+                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="-35 8 -35"></a-entity>
 
                 <!-- Images Content -->
                 <a-entity gltf-model="#frameBlackLongGlb" position="-4.135 2.463 15.004" shadow museum-object

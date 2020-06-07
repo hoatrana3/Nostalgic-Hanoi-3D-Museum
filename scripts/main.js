@@ -1,11 +1,33 @@
+alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố.\nQuá trình tải và hiển thị dữ liệu ở lần đầu truy cập có thể mất khoảng 1 phút, kính mong bạn thông cảm...')
+
 function onBodyLoaded() {
-    toggleCameraPointerLockControl(true)
-
-    addAccessButtonEvent()
-    modelViewerCloseButtonEvent()
     pauseAllVideo()
+    setAframeSceneEvent()
+}
 
-    setupAllViewerThings()
+function setAframeSceneEvent() {
+    const scene = document.querySelector('a-scene')
+
+    if (scene != null) {
+        scene.addEventListener('loaded', () => {
+            setAccessButtonContent()
+            addAccessButtonEvent()
+            toggleCameraPointerLockControl(true)
+            modelViewerCloseButtonEvent()
+            setupAllViewerThings()
+        })
+    }
+}
+
+function setAccessButtonContent() {
+    const accessBtnText = document.getElementById('access-btn-text')
+    const accessBtnIcon = document.getElementById('access-btn-icon')
+
+    if (accessBtnText != null) accessBtnText.innerHTML = 'Xem triển lãm'
+    if (accessBtnIcon != null) {
+        accessBtnIcon.classList.remove('fa-spinner')
+        accessBtnIcon.classList.add('fa-arrow-right')
+    }
 }
 
 function pauseAllVideo() {

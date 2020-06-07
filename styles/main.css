@@ -111,16 +111,16 @@ body {
     color: white;
 }
 
-#access-btn .fa-arrow-right {
+#access-btn .fas {
     margin-left: 5px;
 }
 
-#access-btn .fa-arrow-right,
+#access-btn .fas,
 #access-btn span {
     transition: all 200ms ease;
 }
 
-#access-btn:hover .fa-arrow-right {
+#access-btn:hover .fas {
     margin-left: 15px;
 }
 
