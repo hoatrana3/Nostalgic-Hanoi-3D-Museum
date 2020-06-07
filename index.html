@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triển lãm ảo Hoài niệm Hà Nội phố</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" b
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/vendors/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles/vendors/viewerjs.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
+    <script src="./scripts/vendors/three.js"></script>
+    <script src="./scripts/vendors/aframe.min.js"></script>
+    <script src="./scripts/vendors/aframe-extras.min.js"></script>
+    <script src="./scripts/vendors/aframe-environment-component.min.js"></script>
+    <script src="./scripts/vendors/aframe-event-set-component.min.js"></script>
+
+    <script src="./scripts/components/video-control.js"></script>
+    <script src="./scripts/components/refraction-component.js"></script>
+    <script src="./scripts/components/model-opacity.js"></script>
+    <script src="./scripts/components/museum-object.js"></script>
+    <script src="./scripts/components/museum-image.js"></script>
+
+    <script src="scripts/vendors/jquery.slim.min.js">
+    </script>
+    <script src="scripts/vendors/popper.min.js">
+    </script>
+    <script src="scripts/vendors/bootstrap.min.js">
+    </script>
+    <script src="scripts/vendors/viewerjs.min.js">
+    </script>
+    <script type="module" src="scripts/vendors/model-viewer.js">
+    </script>
+
+    <script src="./scripts/content.js"></script>
+    <script src="./scripts/main.js"></script>
+</head>
+
+<body onload="onBodyLoaded()">
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loading-header">
+            <div class="header-content">
+                <h3>Triển lãm ảo</h3>
+                <h1>Hoài niệm Hà Nội phố</h1>
+
+                <div class="content-authors">
+                    <span>Trần Bá Hoà & Ngô Minh Hoàng</span>
+                </div>
+
+                <button type="button" id="access-btn">
+                    <span>Xem triển lãm</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="loading-body container">
+            <h5>Lời giới thiệu</h5>
+            <hr>
+            <div class="body-content common-shadow">
+                <p>
+                    Với bề dày lịch sử hơn nghìn năm, Thăng Long xưa và Hà Nội ngày nay luôn là trung tâm chính trị,
+                    kinh tế,
+                    văn hoá và giáo dục lớn của cả nước, là biểu tượng cho các giá trị văn hóa của dân tộc và là niềm tự
+                    hào của
+                    mỗi người dân Việt Nam. Để người dân thủ đô và công chúng có cái nhìn toàn diện hơn về lịch sử, văn
+                    hóa, đất
+                    và người Thăng Long – Hà Nội trong những năm đầu thế kỉ XIX đến giữa thế kỉ XX, Cục Văn thư và Lưu
+                    trữ nhà
+                    nước phối hợp với Đại sứ quán Pháp tại Việt Nam tổ chức Triển lãm tài liệu lưu trữ với chủ đề “Hoài
+                    niệm Hà
+                    Nội phố”.
+                </p>
+                <p>
+                    Hơn 130 phiên bản tài liệu, hình ảnh, bản đồ, bản vẽ kỹ thuật… được lựa chọn trưng bày tại Triển lãm
+                    sẽ phần
+                    nào tái hiện đời sống sinh hoạt, văn hoá, tôn giáo của người dân Hà Nội; khu phố cổ – nơi lưu giữ
+                    dấu ấn của
+                    một “Hà Nội ba sáu phố phường” thuở xưa; Thành cổ Hà Nội với quy mô và kiến trúc độc đáo; Văn Miếu
+                    Quốc tử
+                    Giám – Trường Đại học lâu đời nhất Việt Nam; thắng cảnh Hồ Tây cùng nhiều di tích lịch sử bao quanh;
+                    Hồ Hoàn
+                    Kiếm với cầu Thê Húc, tháp Rùa, đền Ngọc Sơn cùng các công trình mang đậm phong cách kiến trúc Á –
+                    Âu thời
+                    Pháp thuộc…
+                </p>
+                <p>
+                    Xuất phát từ tình trạng vật lý và yêu cầu bảo vệ an toàn tài liệu, Ban tổ chức chỉ đưa ra trưng bày
+                    các
+                    phiên bản. Phần lớn bản gốc tài liệu hiện đang được bảo quản tại Trung tâm Lưu trữ quốc gia I thuộc
+                    Cục Văn
+                    thư và Lưu trữ nhà nước.
+                </p>
+                <p>
+                    Triển lãm <b>"Hoài niệm Hà Nội phố"</b> được bố cục theo 3 chủ đề:
+                    <ul>
+                        <li>
+                            <b>Chủ đề 1:</b> Từ Nhượng địa Pháp đến khu phố Tây.
+                        </li>
+                        <li>
+                            <b>Chủ đề 2:</b> Phố cổ Hà Nội.
+                        </li>
+                        <li>
+                            <b>Chủ đề 3:</b> Thành Hà Nội và phụ cận.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    Ban Tổ chức hi vọng, Triển lãm “Hoài niệm Hà Nội phố” còn là dịp để công chúng được tiếp cận nguồn
+                    tài liệu
+                    lưu trữ có giá trị đặc biệt đối với các công trình nghiên cứu về lịch sử, văn hóa, quy hoạch, kiến
+                    trúc… của
+                    Thủ đô ngàn năm văn hiến. Đó vừa là niềm tự hào, vừa là động lực để người dân Hà Nội nói riêng và
+                    người dân
+                    Việt Nam nói chung bảo tồn và phát huy những giá trị văn hóa truyền thống cũng như phấn đấu xây dựng
+                    Thủ đô
+                    ngày càng giàu đẹp, văn minh, hiện đại.
+                </p>
+                <p>
+                    Đây cũng là một trong những sự kiện văn hoá tiêu biểu được tổ chức nhân kỉ niệm 56 năm ngày thành
+                    lập Cục
+                    Văn thư và Lưu trữ nhà nước và 45 năm ngày thiết lập quan hệ ngoại giao Việt Nam – Pháp.
+                </p>
+                <small class="float-right">
+                    <i>
+                        <b>Nguồn tư liệu:</b>
+                        <a href="http://www.archives.org.vn/trien-lam-chau-ban/2018-hoai-niem-ha-noi-pho.htm?fbclid=IwAR0mTVNXr8SMyg-J0oU3EauBNFezM4lXfss9pexUqB_y_rgyX3PhGpCgh9k"
+                            target="_blank">Trung tâm lưu trữ Quốc gia</a>
+                        và một số tư liệu khác
+                    </i>
+                </small>
+            </div>
+            <h5>Video Trailer</h5>
+            <hr>
+            <div class="body-trailer-video">
+                <video class="trailer-video common-shadow" controls>
+                    <source src="assets/medias/trailer_hanoi.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="loading-footer">
+        </div>
+    </div>
+
+    <!-- VIEWER CONTENT -->
+    <div id="viewer-toggle-btn">
+        <i class="fas fa-info"></i>
+        <i class="fas fa-times"></i>
+    </div>
+    <div id="viewer-content" class="common-shadow">
+    </div>
+
+    <!-- MODEL VIEWER -->
+    <div id="model-viewer-container">
+        <div id="model-view-close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <model-viewer id="model-viewer" src="assets/models/museum/museumThreeRoom.glb" alt="" auto-rotate
+            camera-controls shadow-intensity="1"></model-viewer>
+    </div>
+
+    <!-- OTHER VIEWER IMAGES -->
+    <div>
+        <ul id="otherImages">
+            <li><img id="img_hanoipho" src="assets/images/content/hanoipho.png"></li> <!-- 0 -->
+            <li><img id="img_backdrop" src="assets/images/content/backdrop.jpg"></li>
+        </ul>
+    </div>
+    <!-- PART 1 VIEWER IMAGES -->
+    <div>
+        <ul id="part1Images">
+            <li><img id="img_part1_0_full" src="assets/images/content/part1/part1_0_full.jpg"></li> <!-- 0 -->
+            <li><img id="img_part1_0_mini_1" src="assets/images/content/part1/part1_0_mini_1.jpg"></li>
+
+            <li><img id="img_part1_1_mini_1" src="assets/images/content/part1/part1_1_mini_1.jpg"></li> <!-- 2 -->
+            <li><img id="img_part1_1_mini_2" src="assets/images/content/part1/part1_1_mini_2.jpg"></li>
+            <li><img id="img_part1_1_mini_3" src="assets/images/content/part1/part1_1_mini_3.jpg"></li>
+
+            <li><img id="img_part1_2_mini_1" src="assets/images/content/part1/part1_2_mini_1.jpg"></li> <!-- 5 -->
+
+            <li><img id="img_part1_3_mini_1" src="assets/images/content/part1/part1_3_mini_1.jpg"></li> <!-- 6 -->
+            <li><img id="img_part1_3_mini_2" src="assets/images/content/part1/part1_3_mini_2.jpg"></li>
+            <li><img id="img_part1_3_mini_3" src="assets/images/content/part1/part1_3_mini_3.jpg"></li>
+
+            <li><img id="img_part1_4_mini_1" src="assets/images/content/part1/part1_4_mini_1.jpg"></li> <!-- 9 -->
+            <li><img id="img_part1_4_mini_2" src="assets/images/content/part1/part1_4_mini_2.jpg"></li>
+            <li><img id="img_part1_4_mini_3" src="assets/images/content/part1/part1_4_mini_3.jpg"></li>
+            <li><img id="img_part1_4_mini_4" src="assets/images/content/part1/part1_4_mini_4.jpg"></li>
+            <li><img id="img_part1_4_mini_5" src="assets/images/content/part1/part1_4_mini_5.jpg"></li>
+
+            <li><img id="img_part1_5_mini_1" src="assets/images/content/part1/part1_5_mini_1.jpg"></li> <!-- 14 -->
+            <li><img id="img_part1_5_mini_2" src="assets/images/content/part1/part1_5_mini_2.jpg"></li>
+            <li><img id="img_part1_5_mini_3" src="assets/images/content/part1/part1_5_mini_3.jpg"></li>
+            <li><img id="img_part1_5_mini_4" src="assets/images/content/part1/part1_5_mini_4.jpg"></li>
+
+            <li><img id="img_part1_6_mini_1" src="assets/images/content/part1/part1_6_mini_1.jpg"></li> <!-- 18 -->
+            <li><img id="img_part1_6_mini_2" src="assets/images/content/part1/part1_6_mini_2.jpg"></li>
+            <li><img id="img_part1_6_mini_3" src="assets/images/content/part1/part1_6_mini_3.jpg"></li>
+        </ul>
+    </div>
+    <!-- PART 2 VIEWER IMAGES -->
+    <div>
+        <ul id="part2Images">
+            <li><img id="img_part2_1_full" src="assets/images/content/part2/part2_1_full.jpg"></li> <!-- 0 -->
+            <li><img id="img_part2_1_mini_1" src="assets/images/content/part2/part2_1_mini_1.jpg"></li>
+
+            <li><img id="img_part2_2_mini_1" src="assets/images/content/part2/part2_2_mini_1.jpg"></li> <!-- 2 -->
+            <li><img id="img_part2_2_mini_2" src="assets/images/content/part2/part2_2_mini_2.jpg"></li>
+            <li><img id="img_part2_2_mini_3" src="assets/images/content/part2/part2_2_mini_3.jpg"></li>
+            <li><img id="img_part2_2_mini_4" src="assets/images/content/part2/part2_2_mini_4.jpg"></li>
+
+            <li><img id="img_part2_3_mini_1" src="assets/images/content/part2/part2_3_mini_1.jpg"></li> <!-- 6 -->
+
+            <li><img id="img_part2_4_mini_1" src="assets/images/content/part2/part2_4_mini_1.jpg"></li> <!-- 7 -->
+            <li><img id="img_part2_4_mini_2" src="assets/images/content/part2/part2_4_mini_2.jpg"></li>
+            <li><img id="img_part2_4_mini_3" src="assets/images/content/part2/part2_4_mini_3.jpg"></li>
+            <li><img id="img_part2_4_mini_4" src="assets/images/content/part2/part2_4_mini_4.jpg"></li>
+
+            <li><img id="img_part2_5_mini_1" src="assets/images/content/part2/part2_5_mini_1.jpg"></li> <!-- 11-->
+
+            <li><img id="img_part2_6_mini_1" src="assets/images/content/part2/part2_6_mini_1.jpg"></li> <!-- 12 -->
+            <li><img id="img_part2_6_mini_2" src="assets/images/content/part2/part2_6_mini_2.jpg"></li>
+            <li><img id="img_part2_6_mini_3" src="assets/images/content/part2/part2_6_mini_3.jpg"></li>
+            <li><img id="img_part2_6_mini_4" src="assets/images/content/part2/part2_6_mini_4.jpg"></li>
+        </ul>
+    </div>
+    <!-- PART 3 VIEWER IMAGES -->
+    <div>
+        <ul id="part3Images">
+            <li><img id="img_part3_0_full" src="assets/images/content/part3/part3_0_full.jpg"></li> <!-- 0 -->
+            <li><img id="img_part3_0_mini_1" src="assets/images/content/part3/part3_0_mini_1.jpg"></li>
+
+            <li><img id="img_part3_1_mini_1" src="assets/images/content/part3/part3_1_mini_1.jpg"></li> <!-- 2 -->
+            <li><img id="img_part3_1_mini_2" src="assets/images/content/part3/part3_1_mini_2.jpg"></li>
+            <li><img id="img_part3_1_mini_3" src="assets/images/content/part3/part3_1_mini_3.jpg"></li>
+            <li><img id="img_part3_1_mini_4" src="assets/images/content/part3/part3_1_mini_4.jpg"></li>
+            <li><img id="img_part3_1_mini_5" src="assets/images/content/part3/part3_1_mini_5.jpg"></li>
+
+            <li><img id="img_part3_2_mini_1" src="assets/images/content/part3/part3_2_mini_1.jpg"></li> <!-- 7 -->
+
+            <li><img id="img_part3_3_mini_1" src="assets/images/content/part3/part3_3_mini_1.jpg"></li> <!-- 8 -->
+            <li><img id="img_part3_3_mini_2" src="assets/images/content/part3/part3_3_mini_2.jpg"></li>
+            <li><img id="img_part3_3_mini_3" src="assets/images/content/part3/part3_3_mini_3.jpg"></li>
+            <li><img id="img_part3_3_mini_4" src="assets/images/content/part3/part3_3_mini_4.jpg"></li>
+            <li><img id="img_part3_3_mini_5" src="assets/images/content/part3/part3_3_mini_5.jpg"></li>
+
+            <li><img id="img_part3_4_mini_1" src="assets/images/content/part3/part3_4_mini_1.jpg"></li> <!-- 13 -->
+            <li><img id="img_part3_4_mini_2" src="assets/images/content/part3/part3_4_mini_2.jpg"></li>
+            <li><img id="img_part3_4_mini_3" src="assets/images/content/part3/part3_4_mini_3.jpg"></li>
+            <li><img id="img_part3_4_mini_4" src="assets/images/content/part3/part3_4_mini_4.jpg"></li>
+
+            <li><img id="img_part3_5_mini_1" src="assets/images/content/part3/part3_5_mini_1.jpg"></li> <!-- 17 -->
+        </ul>
+    </div>
+
+    <!-- AFRAME 3D SCENE -->
+    <a-scene id="aframe-scene" background="color: #FFFFFF" shadow="type: pcfsoft">
+        <!-- ASSETS MANAGER -->
+        <a-assets>
+            <!-- Sky image -->
+            <img id="sky" src="assets/images/sky/sky1.jpg">
+
+            <!-- Museum models -->
+            <a-assset-item id="museumGlb" src="assets/models/museum/museumThreeRoom.glb"></a-assset-item>
+
+            <a-assset-item id="televisionGlb" src="assets/models/museum/inside/television.glb"></a-assset-item>
+            <a-assset-item id="woodenTableGlb" src="assets/models/museum/inside/wooden_table.glb"></a-assset-item>
+            <a-assset-item id="glassTableGlb" src="assets/models/museum/inside/glass_table.glb"></a-assset-item>
+            <a-assset-item id="grandFatherClockGlb" src="assets/models/museum/inside/grandfather_clock.glb">
+            </a-assset-item>
+            <a-assset-item id="tallTableGlb" src="assets/models/museum/inside/tall_table.glb"></a-assset-item>
+            <a-assset-item id="gramophoneGlb" src="assets/models/museum/inside/gramophone.glb"></a-assset-item>
+            <a-assset-item id="furnitureGlb" src="assets/models/museum/inside/furniture.glb"></a-assset-item>
+
+            <a-assset-item id="ganhHangRongGlb" src="assets/models/museum/inside/ganh_hang_rong.glb"></a-assset-item>
+            <a-assset-item id="rickshawGlb" src="assets/models/museum/inside/rickshaw.glb"></a-assset-item>
+            <a-assset-item id="chineseLatternGlb" src="assets/models/museum/inside/chinese_lattern.glb"></a-assset-item>
+
+            <a-assset-item id="frameBlackLongGlb" src="assets/models/museum/inside/frames/frame_black_long.glb">
+            </a-assset-item>
+            <a-assset-item id="frameMediumReactGlb" src="assets/models/museum/inside/frames/frame_medium_rect.glb">
+            </a-assset-item>
+            <a-assset-item id="frameMediumSquareGlb" src="assets/models/museum/inside/frames/frame_medium_square.glb">
+            </a-assset-item>
+
+            <!-- Medias -->
+            <video id="trailerHanoi" autoplay="false" loop="false" src="assets/medias/trailer_hanoi.mp4"></video>
+            <audio id="forestBirdSong" src="assets/medias/forest_bird_song.mp3" preload="auto"></audio>
+            <audio id="classicalViolin" src="assets/medias/classical_violin.mp3" preload="auto"></audio>
+
+            <!-- Content Images -->
+            <img id="ot-hanoipho" src="assets/images/content/hanoipho.png">
+            <img id="ot-backdrop" src="assets/images/content/backdrop.jpg">
+
+            <!-- Part 1 -->
+            <img id="p1-0-full" src="assets/images/content/part1/part1_0_full.jpg">
+            <img id="p1-0-mini-1" src="assets/images/content/part1/part1_0_mini_1.jpg">
+
+            <img id="p1-1-mini-1" src="assets/images/content/part1/part1_1_mini_1.jpg">
+            <img id="p1-1-mini-2" src="assets/images/content/part1/part1_1_mini_2.jpg">
+            <img id="p1-1-mini-3" src="assets/images/content/part1/part1_1_mini_3.jpg">
+
+            <img id="p1-2-mini-1" src="assets/images/content/part1/part1_2_mini_1.jpg">
+
+            <img id="p1-3-mini-1" src="assets/images/content/part1/part1_3_mini_1.jpg">
+            <img id="p1-3-mini-2" src="assets/images/content/part1/part1_3_mini_2.jpg">
+            <img id="p1-3-mini-3" src="assets/images/content/part1/part1_3_mini_3.jpg">
+
+            <img id="p1-4-mini-1" src="assets/images/content/part1/part1_4_mini_1.jpg">
+            <img id="p1-4-mini-2" src="assets/images/content/part1/part1_4_mini_2.jpg">
+            <img id="p1-4-mini-3" src="assets/images/content/part1/part1_4_mini_3.jpg">
+            <img id="p1-4-mini-4" src="assets/images/content/part1/part1_4_mini_4.jpg">
+            <img id="p1-4-mini-5" src="assets/images/content/part1/part1_4_mini_5.jpg">
+
+            <img id="p1-5-mini-1" src="assets/images/content/part1/part1_5_mini_1.jpg">
+            <img id="p1-5-mini-2" src="assets/images/content/part1/part1_5_mini_2.jpg">
+            <img id="p1-5-mini-3" src="assets/images/content/part1/part1_5_mini_3.jpg">
+            <img id="p1-5-mini-4" src="assets/images/content/part1/part1_5_mini_4.jpg">
+
+            <img id="p1-6-mini-1" src="assets/images/content/part1/part1_6_mini_1.jpg">
+            <img id="p1-6-mini-2" src="assets/images/content/part1/part1_6_mini_2.jpg">
+            <img id="p1-6-mini-3" src="assets/images/content/part1/part1_6_mini_3.jpg">
+
+            <!-- Part 2 -->
+            <img id="p2-1-full" src="assets/images/content/part2/part2_1_full.jpg">
+            <img id="p2-1-mini-1" src="assets/images/content/part2/part2_1_mini_1.jpg">
+
+            <img id="p2-2-full" src="assets/images/content/part2/part2_2_full.jpg">
+            <img id="p2-2-mini-1" src="assets/images/content/part2/part2_2_mini_1.jpg">
+            <img id="p2-2-mini-2" src="assets/images/content/part2/part2_2_mini_2.jpg">
+            <img id="p2-2-mini-3" src="assets/images/content/part2/part2_2_mini_3.jpg">
+            <img id="p2-2-mini-4" src="assets/images/content/part2/part2_2_mini_4.jpg">
+
+            <img id="p2-3-full" src="assets/images/content/part2/part2_3_full.jpg">
+            <img id="p2-3-mini-1" src="assets/images/content/part2/part2_3_mini_1.jpg">
+
+            <img id="p2-4-full" src="assets/images/content/part2/part2_4_full.jpg">
+            <img id="p2-4-mini-1" src="assets/images/content/part2/part2_4_mini_1.jpg">
+            <img id="p2-4-mini-2" src="assets/images/content/part2/part2_4_mini_2.jpg">
+            <img id="p2-4-mini-3" src="assets/images/content/part2/part2_4_mini_3.jpg">
+            <img id="p2-4-mini-4" src="assets/images/content/part2/part2_4_mini_4.jpg">
+
+            <img id="p2-5-full" src="assets/images/content/part2/part2_5_full.jpg">
+            <img id="p2-5-mini-1" src="assets/images/content/part2/part2_5_mini_1.jpg">
+
+            <img id="p2-6-full" src="assets/images/content/part2/part2_6_full.jpg">
+            <img id="p2-6-mini-1" src="assets/images/content/part2/part2_6_mini_1.jpg">
+            <img id="p2-6-mini-2" src="assets/images/content/part2/part2_6_mini_2.jpg">
+            <img id="p2-6-mini-3" src="assets/images/content/part2/part2_6_mini_3.jpg">
+            <img id="p2-6-mini-4" src="assets/images/content/part2/part2_6_mini_4.jpg">
+
+            <!-- Part 3 -->
+            <img id="p3-0-full" src="assets/images/content/part3/part3_0_full.jpg">
+            <img id="p3-0-mini-1" src="assets/images/content/part3/part3_0_mini_1.jpg">
+
+            <img id="p3-1-full" src="assets/images/content/part3/part3_1_full.jpg">
+            <img id="p3-1-mini-1" src="assets/images/content/part3/part3_1_mini_1.jpg">
+            <img id="p3-1-mini-2" src="assets/images/content/part3/part3_1_mini_2.jpg">
+            <img id="p3-1-mini-3" src="assets/images/content/part3/part3_1_mini_3.jpg">
+            <img id="p3-1-mini-4" src="assets/images/content/part3/part3_1_mini_4.jpg">
+            <img id="p3-1-mini-5" src="assets/images/content/part3/part3_1_mini_5.jpg">
+
+            <img id="p3-2-full" src="assets/images/content/part3/part3_2_full.jpg">
+            <img id="p3-2-mini-1" src="assets/images/content/part3/part3_2_mini_1.jpg">
+
+            <img id="p3-3-full" src="assets/images/content/part3/part3_3_full.jpg">
+            <img id="p3-3-mini-1" src="assets/images/content/part3/part3_3_mini_1.jpg">
+            <img id="p3-3-mini-2" src="assets/images/content/part3/part3_3_mini_2.jpg">
+            <img id="p3-3-mini-3" src="assets/images/content/part3/part3_3_mini_3.jpg">
+            <img id="p3-3-mini-4" src="assets/images/content/part3/part3_3_mini_4.jpg">
+            <img id="p3-3-mini-5" src="assets/images/content/part3/part3_3_mini_5.jpg">
+
+            <img id="p3-4-full" src="assets/images/content/part3/part3_4_full.jpg">
+            <img id="p3-4-mini-1" src="assets/images/content/part3/part3_4_mini_1.jpg">
+            <img id="p3-4-mini-2" src="assets/images/content/part3/part3_4_mini_2.jpg">
+            <img id="p3-4-mini-3" src="assets/images/content/part3/part3_4_mini_3.jpg">
+            <img id="p3-4-mini-4" src="assets/images/content/part3/part3_4_mini_4.jpg">
+
+            <img id="p3-5-full" src="assets/images/content/part3/part3_5_full.jpg">
+            <img id="p3-5-mini-1" src="assets/images/content/part3/part3_5_mini_1.jpg">
+        </a-assets>
+
+        <!-- SKY -->
+        <a-sky src="#sky" rotation="0 180 0" scale="0.5 0.5 0.5"></a-sky>
+
+        <!-- MUSEUM -->
+        <a-entity id="museum" gltf-model="#museumGlb" position="0 -25 0" shadow>
+            <!-- Humman's eyes -->
+            <a-entity movement-controls="speed: .5" position="0.357 2 21.856">
+                <a-entity id="mainCamera" camera look-controls>
+                    <a-cursor color="#FFFFFF"></a-cursor>
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="outside">
+                <!-- Sounds -->
+                <a-entity id="forestBirdSongSound" sound="src: #forestBirdSong; autoplay: true; loop: true"
+                    position="0 10 35"></a-entity>
+
+                <!-- Images Content -->
+                <a-entity gltf-model="#frameBlackLongGlb" position="-4.135 2.463 15.004" shadow museum-object
+                    museum-image="index: 0; viewer: others">
+                    <a-image src="#ot-hanoipho" scale="1.695 2.597 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" position="4.090 2.463 15.004" shadow museum-object
+                    museum-image="index: 1; viewer: others">
+                    <a-image src="#ot-backdrop" scale="1.695 2.597 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="roomFront">
+                <!-- Ceiling Center light -->
+                <a-entity position="0 6 0"
+                    light="color: #F6EED5; intensity: 1.5; castShadow: true; distance: 30; type: point">
+                </a-entity>
+
+                <!-- Front television model -->
+                <a-entity id="woodenTableRoomFront_1" gltf-model="#woodenTableGlb" position="0 0.295 -6">
+                    <a-entity id="television" gltf-model="#televisionGlb" position="0 0.845 0" scale="2 2 2" shadow
+                        museum-object>
+                        <!-- Video Trailer -->
+                        <a-video src="#trailerHanoi" width="4" height="3" position="0 0.493 0.042"
+                            material="side: front" scale="0.387 0.290 0.359" video-control>
+                        </a-video>
+                    </a-entity>
+                </a-entity>
+
+                <!-- Front Furniture -->
+                <a-entity gltf-model="#furnitureGlb" position="0 0.219 6" rotation="0 180 0" shadow></a-entity>
+                <a-entity gltf-model="#furnitureGlb" position="-6 0.219 0" rotation="0 90 0" shadow></a-entity>
+                <a-entity gltf-model="#furnitureGlb" position="6 0.219 0" rotation="0 -90 0" shadow></a-entity>
+
+                <!-- Front Clock -->
+                <a-entity gltf-model="#grandFatherClockGlb" animation-mixer position="5.393 0 14.448" rotation="0 180 0"
+                    shadow></a-entity>
+
+                <!-- Front Tall Table with Gramophone -->
+                <a-entity gltf-model="#tallTableGlb" position="-14.284 0 -3.970" rotation="0 60 0" shadow>
+                    <a-entity gltf-model="#gramophoneGlb" animation-mixer position="0 1.838 0" shadow>
+                        <a-entity id="classicalViolin"
+                            sound="src: #classicalViolin; autoplay: true; loop: true; volume: 2"
+                            position="0.015 0.545 0">
+                        </a-entity>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="room1">
+                <!-- Ceiling Room 1 light -->
+                <a-entity position="-20.518 4.9 13.579"
+                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                </a-entity>
+
+                <!-- Images Content -->
+                <a-entity gltf-model="#frameBlackLongGlb" position="-8.501 2.463 10.382" rotation="0 120 0" shadow
+                    museum-object museum-image="index: 0; viewer: part1">
+                    <a-image src="#p1-0-full" scale="1.695 2.597 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" position="-14.090 2.463 0.695" rotation="0 120 90"
+                    scale="0.75 1.500 1" museum-object museum-image="index: 1; viewer: part1">
+                    <a-image src="#p1-0-mini-1" rotation="0 0 -90" scale="2.820 2 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-8.031 2.4 15.783" rotation="0 210 0" shadow
+                    museum-object museum-image="index: 2; viewer: part1">
+                    <a-image src="#p1-1-mini-1" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="-9.992 3.417 16.898" rotation="0 210 90" shadow
+                    museum-object museum-image="index: 3; viewer: part1">
+                    <a-image src="#p1-1-mini-2" scale="1.972 1.643 1" rotation="0 0 -90"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" scale="0.636 1.100 1.1" position="-10.323 1.449 17.114"
+                    rotation="0 210 90" shadow museum-object museum-image="index: 4; viewer: part1">
+                    <a-image src="#p1-1-mini-3" scale="2.681 1.658 1" rotation="0 0 -90" position="0 0 -0.003">
+                    </a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-15.355 3.326 20.012" rotation="0 210 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 6; viewer: part1">
+                    <a-image src="#p1-3-mini-1" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-15.364 1.487 20.012" rotation="0 210 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 7; viewer: part1">
+                    <a-image src="#p1-3-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="-17.895 2.478 21.461" rotation="0 210 0"
+                    scale="1.343 0.766 1" shadow museum-object museum-image="index: 8; viewer: part1">
+                    <a-image src="#p1-3-mini-3" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-25.427 3.259 2.904" rotation="0 30 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 9; viewer: part1">
+                    <a-image src="#p1-4-mini-1" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-25.036 1.395 2.679" rotation="0 30 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 10; viewer: part1">
+                    <a-image src="#p1-4-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-22.977 3.259 1.495" rotation="0 30 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 11; viewer: part1">
+                    <a-image src="#p1-4-mini-3" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-22.563 1.395 1.256" rotation="0 30 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 12; viewer: part1">
+                    <a-image src="#p1-4-mini-4" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" scale="1.723 0.704 1.1" position="-20.260 2.309 -0.088"
+                    rotation="0 30 90" shadow museum-object museum-image="index: 13; viewer: part1">
+                    <a-image src="#p1-4-mini-5" scale="2.681 1.658 1" rotation="0 0 -90" position="0 0 -0.003">
+                    </a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumReactGlb" position="-23.093 3.430 22.126" rotation="0 165 0"
+                    scale="1.343 0.766 1" shadow museum-object museum-image="index: 14; viewer: part1">
+                    <a-image src="#p1-5-mini-1" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="-26.232 2.372 21.287" rotation="0 165 0"
+                    scale="1.343 0.766 1" shadow museum-object museum-image="index: 15; viewer: part1">
+                    <a-image src="#p1-5-mini-2" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-23.479 1.303 22.037" rotation="0 165 0"
+                    scale="1.302 1 1" shadow museum-object museum-image="index: 17; viewer: part1">
+                    <a-image src="#p1-5-mini-4" scale="1.264 1.260 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-31.681 2.463 12.968" rotation="0 75 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 18; viewer: part1">
+                    <a-image src="#p1-6-mini-1" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-30.929 2.463 10.161" rotation="0 75 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 19; viewer: part1">
+                    <a-image src="#p1-6-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="-30.182 2.463 7.371" rotation="0 75 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 20; viewer: part1">
+                    <a-image src="#p1-6-mini-3" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#glassTableGlb" rotation="0 120 0" position="-17.644 0 14.077" museum-object
+                    museum-image="index: 5; viewer: part1">
+                    <a-image src="#p1-2-mini-1" scale="2.885 3.56 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 0 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#glassTableGlb" rotation="0 120 0" position="-21.208 0 7.903" museum-object
+                    museum-image="index: 16; viewer: part1">
+                    <a-image src="#p1-5-mini-3" scale="2.885 3.56 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 0 0"></a-image>
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="room2">
+                <!-- Ceiling Room 2 light -->
+                <a-entity position="0 4.9 -23.318"
+                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                </a-entity>
+
+                <!-- Images Content -->
+                <a-entity gltf-model="#frameBlackLongGlb" position="-1.019 2.463 -12.769" shadow museum-object
+                    museum-image="index: 0; viewer: part2">
+                    <a-image src="#p2-1-full" scale="1.695 2.597 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" position="1.448 2.463 -12.769" scale="0.897 0.583 1"
+                    museum-object museum-image="index: 1; viewer: part2">
+                    <a-image src="#p2-1-mini-1" position="0 0 -0.003" scale="1.738 2.464 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameBlackLongGlb" position="-9.805 2.463 -24.449" rotation="0 90 90"
+                    scale="1.206 2.360 1" museum-object museum-image="index: 2; viewer: part2">
+                    <a-image src="#p2-2-mini-1" rotation="0 0 -90" scale="2.820 2 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="0.149 2.463 -32.823" rotation="0 -90 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 3; viewer: part2">
+                    <a-image src="#p2-2-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="0.149 2.463 -30.039" rotation="0 -90 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 4; viewer: part2">
+                    <a-image src="#p2-2-mini-3" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="0.136 2.463 -17.539" rotation="0 -90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 5; viewer: part2">
+                    <a-image src="#p2-2-mini-4" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumReactGlb" position="0.374 2.463 -17.539" rotation="0 90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 7; viewer: part2">
+                    <a-image src="#p2-4-mini-1" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="0.382 2.463 -30.039" rotation="0 90 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 8; viewer: part2">
+                    <a-image src="#p2-4-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="0.382 3.411 -32.823" rotation="0 90 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 9; viewer: part2">
+                    <a-image src="#p2-4-mini-3" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="0.382 1.532 -32.823" rotation="0 90 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 10; viewer: part2">
+                    <a-image src="#p2-4-mini-4" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameMediumReactGlb" position="10.155 2.463 -32.136" rotation="0 -90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 12; viewer: part2">
+                    <a-image src="#p2-6-mini-1" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="10.155 2.463 -27.309" rotation="0 -90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 13; viewer: part2">
+                    <a-image src="#p2-6-mini-2" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="10.155 2.463 -22.499" rotation="0 -90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 14; viewer: part2">
+                    <a-image src="#p2-6-mini-3" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="10.155 2.463 -17.684" rotation="0 -90 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 15; viewer: part2">
+                    <a-image src="#p2-6-mini-4" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#glassTableGlb" rotation="0 -90 0" position="-4.876 0 -24.102" museum-object
+                    museum-image="index: 6; viewer: part2">
+                    <a-image src="#p2-3-mini-1" scale="3.677 2.911 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 90 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#glassTableGlb" rotation="0 0 0" position="5.338 0 -24.102" museum-object
+                    museum-image="index: 11; viewer: part2">
+                    <a-image src="#p2-5-mini-1" scale="2.885 3.56 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 0 0"></a-image>
+                </a-entity>
+
+                <!-- Room 2 Models -->
+                <a-entity id="p2_ganh_hang_rong" gltf-model="#ganhHangRongGlb" position="1.585 0.011 -28.578"
+                    rotation="0 90 0" museum-object="is3DObject: true">
+                </a-entity>
+                <a-entity id="p2_rickshaw" gltf-model="#rickshawGlb" position="2.448 0.032 -33.678"
+                    rotation="0 33.877 0" museum-object="is3DObject: true">
+                </a-entity>
+                <a-entity id="p2_chinese_lattern" gltf-model="#chineseLatternGlb" position="-0.372 3.37 -34.848"
+                    museum-object="is3DObject: true">
+                </a-entity>
+            </a-entity>
+
+            <a-entity id="room3">
+                <!-- Ceiling Room 3 light -->
+                <a-entity position="22.600 4.9 13.643"
+                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                </a-entity>
+
+                <!-- Images Content -->
+                <a-entity gltf-model="#frameBlackLongGlb" position="8.921 2.463 10.382" rotation="0 -120 0" shadow
+                    museum-object museum-image="index: 0; viewer: part3">
+                    <a-image src="#p3-0-full" scale="1.695 2.597 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" position="14.303 2.463 1.049" rotation="0 -120 90"
+                    scale="0.75 1.136 1" museum-object museum-image="index: 1; viewer: part3">
+                    <a-image src="#p3-0-mini-1" rotation="0 0 -90" scale="2.820 2 1" position="0 0 -0.003"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameBlackLongGlb" position="20.411 2.463 -0.327" rotation="0 -30 90"
+                    scale="1.310 1.974 1" museum-object museum-image="index: 2; viewer: part3">
+                    <a-image src="#p3-1-mini-1" rotation="0 0 -90" scale="0.967 2 1" position="0 0.924 -0.003">
+                    </a-image>
+                    <a-image src="#p3-1-mini-2" rotation="0 0 -90" scale="0.967 2 1" position="0 0.035 -0.003">
+                    </a-image>
+                    <a-image src="#p3-1-mini-3" rotation="0 0 -90" scale="0.967 2 1" position="0 -0.928 -0.003">
+                    </a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="27.723 3.065 0.441" rotation="0 -30 0"
+                    scale="1.285 0.726 1" shadow museum-object museum-image="index: 5; viewer: part3">
+                    <a-image src="#p3-1-mini-4" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="30.419 1.668 1.997" rotation="0 -30 0"
+                    scale="1.285 0.726 1" shadow museum-object museum-image="index: 6; viewer: part3">
+                    <a-image src="#p3-1-mini-5" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameBlackLongGlb" position="33.510 2.463 7.239" rotation="0 -30 0" shadow
+                    museum-object museum-image="index: 8; viewer: part3">
+                    <a-image src="#p3-3-mini-1" scale="1.695 2.597 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameBlackLongGlb" position="33.683 2.463 17.466" rotation="0 -120 0" shadow
+                    scale="1.024 1.049 1" museum-object museum-image="index: 9; viewer: part3">
+                    <a-image src="#p3-3-mini-2" scale="1.695 2.597 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="32.390 3.274 19.673" rotation="0 -120 0"
+                    scale="1.479 0.903 1" shadow museum-object museum-image="index: 10; viewer: part3">
+                    <a-image src="#p3-3-mini-3" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="32.390 1.632 19.673" rotation="0 -120 0"
+                    scale="1.479 0.903 1" shadow museum-object museum-image="index: 11; viewer: part3">
+                    <a-image src="#p3-3-mini-4" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="23.539 2.463 24.470" rotation="0 150 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 12; viewer: part3">
+                    <a-image src="#p3-3-mini-5" scale="1.652 1.996 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#frameBlackLongGlb" position="17.173 2.463 24.292" rotation="0 150 0" shadow
+                    scale="1.024 1.049 1" museum-object museum-image="index: 13; viewer: part3">
+                    <a-image src="#p3-4-mini-1" scale="1.695 2.597 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="14.853 2.463 22.947" rotation="0 150 0"
+                    scale="1.479 0.903 1" shadow museum-object museum-image="index: 14; viewer: part3">
+                    <a-image src="#p3-4-mini-2" scale="1.267 1.267 1" position="0 0 -0.02"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumReactGlb" position="11.772 2.463 17.676" rotation="0 150 0"
+                    scale="1.960 1.109 1" shadow museum-object museum-image="index: 15; viewer: part3">
+                    <a-image src="#p3-4-mini-3" scale="1.641 1.978 1"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#frameMediumSquareGlb" position="8.556 2.463 15.840" rotation="0 150 0"
+                    scale="1.557 1 1" shadow museum-object museum-image="index: 16; viewer: part3">
+                    <a-image src="#p3-4-mini-4" scale="1.267 1.267 1"></a-image>
+                </a-entity>
+
+                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="24.379 0 8.641" museum-object>
+                    <a-image src="#p3-2-mini-1" scale="3.677 2.911 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 90 0"></a-image>
+                </a-entity>
+                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="20.106 0 16.042" museum-object>
+                    <a-image src="#p3-5-mini-1" scale="3.677 2.911 0.12236" position="0 1 0" geometry="primitive: box"
+                        rotation="-90 90 0"></a-image>
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Sun light -->
+        <a-entity position="0 120 0" light="color: #FFF; intensity: 2; castShadow: true; target: #museum; type: spot">
+        </a-entity>
+
+        <!-- Ambient light -->
+        <a-entity light="color: #BBB; type: hemisphere; intensity: 2" position="0 200 0">
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
