@@ -2,24 +2,15 @@ alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố
 
 function onBodyLoaded() {
     pauseAllVideo()
-    setTimeoutLoadData()
-}
 
-function setTimeoutLoadData() {
-    const timeout = setTimeout(function () {
-        console.log('Timeout load data!')
+    setAccessButtonContent()
+    addAccessButtonEvent()
 
-        setAccessButtonContent()
-        addAccessButtonEvent()
+    toggleCameraPointerLockControl(true)
 
-        toggleCameraPointerLockControl(true)
+    modelViewerCloseButtonEvent()
 
-        modelViewerCloseButtonEvent()
-
-        setupAllViewerThings()
-    }, 10000)
-
-    console.log(timeout)
+    setupAllViewerThings()
 }
 
 function setAccessButtonContent() {
