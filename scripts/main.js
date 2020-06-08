@@ -2,14 +2,16 @@ alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố
 
 function onBodyLoaded() {
     pauseAllVideo()
+    turnOffRoomLights()
     setupAllViewerThings()
     toggleCameraPointerLockControl(true)
     modelViewerCloseButtonEvent()
+    lightToggleButtonEvent()
 
     setTimeout(function () {
         setAccessButtonContent()
         addAccessButtonEvent()
-    }, 5000)
+    }, 2500)
 }
 
 function setAccessButtonContent() {
@@ -35,6 +37,55 @@ function addAccessButtonEvent() {
     accessBtn.addEventListener('click', () => {
         loadingScreen.classList.add('hide')
     })
+}
+
+function lightToggleButtonEvent() {
+    const lightToggleBtn = document.getElementById('light-toggle-btn')
+    lightToggleBtn.addEventListener('click', () => {
+        lightToggleBtn.classList.toggle('light-on')
+
+        if (lightToggleBtn.classList.contains('light-on')) {
+            turnOnRoomLights()
+        } else {
+            turnOffRoomLights()
+        }
+    })
+}
+
+function turnOffRoomLights() {
+    const frontLight = document.getElementById('front-light')
+    const room1Light = document.getElementById('room1-light')
+    const room2Light = document.getElementById('room2-light')
+    const room3Light = document.getElementById('room3-light')
+
+    turnOffLight(frontLight)
+    turnOffLight(room1Light)
+    turnOffLight(room2Light)
+    turnOffLight(room3Light)
+}
+
+function turnOnRoomLights() {
+    const frontLight = document.getElementById('front-light')
+    const room1Light = document.getElementById('room1-light')
+    const room2Light = document.getElementById('room2-light')
+    const room3Light = document.getElementById('room3-light')
+
+    turnOnLight(frontLight)
+    turnOnLight(room1Light)
+    turnOnLight(room2Light)
+    turnOnLight(room3Light)
+}
+
+function turnOffLight(light) {
+    light.setAttribute('visible', false)
+    light.setAttribute('light', 'castShadow', false)
+    light.setAttribute('light', 'intensity', 0)
+}
+
+function turnOnLight(light) {
+    light.setAttribute('visible', true)
+    light.setAttribute('light', 'castShadow', true)
+    light.setAttribute('light', 'intensity', 1)
 }
 
 function modelViewerCloseButtonEvent() {

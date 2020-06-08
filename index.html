@@ -167,6 +167,11 @@
         <model-viewer id="model-viewer" src="" alt="" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
     </div>
 
+    <!-- LIGHT TOGGLE BUTTON -->
+    <div id="light-toggle-btn" class="common-shadow">
+        <i class="fas fa-lightbulb"></i>
+    </div>
+
     <!-- OTHER VIEWER IMAGES -->
     <div>
         <ul id="otherImages">
@@ -431,7 +436,7 @@
             <!-- Museum room front -->
             <a-entity id="roomFront">
                 <!-- Ceiling Center light -->
-                <a-entity position="0 6 0"
+                <a-entity id="front-light" position="0 6 0"
                     light="color: #F6EED5; intensity: 1.5; castShadow: true; distance: 30; type: point">
                 </a-entity>
 
@@ -469,8 +474,8 @@
             <!-- Museum room 1 -->
             <a-entity id="room1">
                 <!-- Ceiling Room 1 light -->
-                <a-entity position="-20.518 4.9 13.579"
-                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                <a-entity id="room1-light" position="-20.518 4.9 13.579"
+                    light="color: #F6EED5; intensity: 1.5; castShadow: true; distance: 30; type: point">
                 </a-entity>
 
                 <!-- Images Content -->
@@ -573,8 +578,8 @@
             <!-- Museum room 2 -->
             <a-entity id="room2">
                 <!-- Ceiling Room 2 light -->
-                <a-entity position="0 4.9 -23.318"
-                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                <a-entity id="room2-light" position="0 4.9 -23.318"
+                    light="color: #F6EED5; intensity: 1.5; castShadow: true; distance: 30; type: point">
                 </a-entity>
 
                 <!-- Images Content -->
@@ -664,16 +669,16 @@
             <!-- Museum room 3 -->
             <a-entity id="room3">
                 <!-- Ceiling Room 3 light -->
-                <a-entity position="22.600 4.9 13.643"
-                    light="color: #F6EED5; intensity: 1.25; castShadow: true; distance: 30; type: point">
+                <a-entity id="room3-light" position="22.600 4.9 13.643"
+                    light="color: #F6EED5; intensity: 1.5; castShadow: true; distance: 30; type: point">
                 </a-entity>
 
                 <!-- Images Content -->
-                <a-entity gltf-model="#frameBlackLongGlb" position="8.921 2.463 10.382" rotation="0 -120 0" shadow
+                <a-entity gltf-model="#frameBlackLongGlb" position="13.934 2.463 1.688" rotation="0 -120 0" shadow
                     museum-object museum-image="index: 0; viewer: part3">
                     <a-image src="#p3-0-full" scale="1.695 2.597 0"></a-image>
                 </a-entity>
-                <a-entity gltf-model="#frameBlackLongGlb" position="14.303 2.463 1.049" rotation="0 -120 90"
+                <a-entity gltf-model="#frameBlackLongGlb" position="8.649 2.463 10.854" rotation="0 -120 90"
                     scale="0.75 1.136 1" museum-object museum-image="index: 1; viewer: part3">
                     <a-image src="#p3-0-mini-1" rotation="0 0 -90" scale="2.820 2 1" position="0 0 -0.003"></a-image>
                 </a-entity>
@@ -734,11 +739,13 @@
                     <a-image src="#p3-4-mini-4" scale="1.267 1.267 1"></a-image>
                 </a-entity>
 
-                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="24.379 0 8.641" museum-object>
+                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="24.379 0 8.641" museum-object
+                    museum-image="index: 7; viewer: part3">
                     <a-image src="#p3-2-mini-1" scale="3.677 2.911 0.12236" position="0 1 0" geometry="primitive: box"
                         rotation="-90 90 0"></a-image>
                 </a-entity>
-                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="20.106 0 16.042" museum-object>
+                <a-entity gltf-model="#glassTableGlb" rotation="0 150 0" position="20.106 0 16.042" museum-object
+                    museum-image="index: 17; viewer: part3">
                     <a-image src="#p3-5-mini-1" scale="3.677 2.911 0.12236" position="0 1 0" geometry="primitive: box"
                         rotation="-90 90 0"></a-image>
                 </a-entity>

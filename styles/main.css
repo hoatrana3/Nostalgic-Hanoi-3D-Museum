@@ -262,3 +262,35 @@ body {
 #model-view-close-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+#light-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+
+    z-index: 999;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: black;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 1.2em;
+
+    transition: all 500ms ease-in-out;
+}
+
+#light-toggle-btn.light-on {
+    color: #DFD10B;
+    background-color:white;
+}
