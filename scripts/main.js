@@ -8,6 +8,11 @@ function onBodyLoaded() {
     toggleCameraPointerLockControl(true)
     modelViewerCloseButtonEvent()
     lightToggleButtonEvent()
+
+    setTimeout(function () {
+        setAccessButtonContent()
+        addAccessButtonEvent()
+    }, 5000)
 }
 
 function setSceneUpdateShadow() {
@@ -54,6 +59,7 @@ function addAccessButtonEvent() {
 
     accessBtn.addEventListener('click', () => {
         loadingScreen.classList.add('hide')
+        setSceneUpdateShadow()
     })
 }
 
