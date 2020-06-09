@@ -2,16 +2,34 @@ alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố
 
 function onBodyLoaded() {
     pauseAllVideo()
+    setAllModelLoadedEvent()
     turnOffRoomLights()
     setupAllViewerThings()
     toggleCameraPointerLockControl(true)
     modelViewerCloseButtonEvent()
     lightToggleButtonEvent()
+}
 
-    setTimeout(function () {
-        setAccessButtonContent()
-        addAccessButtonEvent()
-    }, 2500)
+function setSceneUpdateShadow() {
+    const scene = document.querySelector('a-scene')
+    scene.renderer.shadowMap.autoUpdate = false;
+    scene.renderer.shadowMap.needsUpdate = true;
+}
+
+function setAllModelLoadedEvent() {
+    const modelList = document.querySelectorAll('[gltf-model]')
+    let timeoutLoadedAll = null
+
+    modelList.forEach(model => {
+        model.addEventListener('model-loaded', () => {
+            if (timeoutLoadedAll != null) clearTimeout(timeoutLoadedAll)
+            timeoutLoadedAll = setTimeout(() => {
+                setAccessButtonContent()
+                addAccessButtonEvent()
+                setSceneUpdateShadow()
+            }, 1000)
+        })
+    })
 }
 
 function setAccessButtonContent() {
@@ -46,6 +64,7 @@ function lightToggleButtonEvent() {
 
         if (lightToggleBtn.classList.contains('light-on')) {
             turnOnRoomLights()
+            setSceneUpdateShadow()
         } else {
             turnOffRoomLights()
         }
