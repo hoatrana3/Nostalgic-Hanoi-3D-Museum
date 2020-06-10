@@ -10,11 +10,17 @@ AFRAME.registerComponent('museum-image', {
         }
     },
     init: function () {
-        const viewer = viewers[this.data.viewer]
+        const findViewerInterval = setInterval(() => {
+            const viewer = viewers[this.data.viewer]
 
-        this.el.addEventListener('click', () => {
-            viewer.show()
-            if (this.data.index !== -1) viewer.view(this.data.index)
-        })
+            if (viewer != null) {
+                this.el.addEventListener('click', () => {
+                    viewer.show()
+                    if (this.data.index !== -1) viewer.view(this.data.index)
+                })
+
+                clearInterval(findViewerInterval)
+            }
+        }, 500)
     }
 });
