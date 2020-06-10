@@ -40,6 +40,30 @@ body {
     box-shadow: 0px 0px 55px 10px rgba(0, 0, 0, 0.4);
 }
 
+.common-button {
+    position: fixed;
+    z-index: 999;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: black;
+
+    cursor: pointer;
+
+    font-size: 1.2em;
+
+    transition: all 500ms ease-in-out;
+}
+
 .loading-header {
     width: 100%;
     height: 100%;
@@ -168,14 +192,14 @@ body {
 #viewer-content {
     position: fixed;
     z-index: 999999;
-    
+
     opacity: 0;
-    transform: scale(.7,.7) translate(20%, 30%);
+    transform: scale(.7, .7) translate(20%, 30%);
     pointer-events: none !important;
 
     right: 30px;
     bottom: -100%;
-    
+
     text-align: left;
     color: black;
 
@@ -193,18 +217,22 @@ body {
 
     transition: all 500ms ease-in-out;
 }
+
 #viewer-content.show {
     opacity: 1;
     bottom: 90px;
     pointer-events: auto !important;
 }
+
 #viewer-content.show:hover {
-    transform: scale(1,1);
+    transform: scale(1, 1);
 }
+
 #viewer-content h3 {
     font-weight: bold;
     font-size: 1.4rem;
 }
+
 #viewer-content h5 {
     font-weight: 500;
     font-size: 1.1rem;
@@ -225,15 +253,17 @@ body {
 
     transition: all 500ms ease-in-out;
 }
+
 #model-viewer-container #model-viewer {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 #model-viewer-container.show {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto !important; 
+    pointer-events: auto !important;
 }
 
 #model-view-close-btn {
@@ -256,41 +286,39 @@ body {
     text-align: center;
     line-height: 50px;
 }
+
 #model-view-close-btn i {
     margin: 0 0 15px 15px;
 }
+
 #model-view-close-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#light-toggle-btn {
-    position: fixed;
+#home-btn {
     bottom: 30px;
     left: 30px;
+}
 
-    z-index: 999;
+#screenshot-btn {
+    bottom: 90px;
+    left: 90px;
+}
 
-    width: 50px;
-    height: 50px;
+#facebook-btn {
+    bottom: 90px;
+    left: 30px;
+}
 
-    border-radius: 50%;
+#light-toggle-btn {
+    bottom: 30px;
+    left: 90px;
+
     background-color: black;
-    padding: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     color: white;
-
-    cursor: pointer;
-
-    font-size: 1.2em;
-
-    transition: all 500ms ease-in-out;
 }
 
 #light-toggle-btn.light-on {
     color: #DFD10B;
-    background-color:white;
+    background-color: white;
 }

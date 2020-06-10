@@ -4,15 +4,21 @@ function onBodyLoaded() {
     pauseAllVideo()
     setAllModelLoadedEvent()
     turnOffRoomLights()
+
     setupAllViewerThings()
-    toggleCameraPointerLockControl(true)
     modelViewerCloseButtonEvent()
-    lightToggleButtonEvent()
+    setOptionButtonsEvent()
 
     setTimeout(function () {
-        setAccessButtonContent()
-        addAccessButtonEvent()
+        setupThingsAfterLoaded()
     }, 5000)
+}
+
+function setupThingsAfterLoaded() {
+    setAccessButtonContent()
+    addAccessButtonEvent()
+    setSceneUpdateShadow()
+    toggleCameraPointerLockControl(true)
 }
 
 function setSceneUpdateShadow() {
@@ -29,9 +35,7 @@ function setAllModelLoadedEvent() {
         model.addEventListener('model-loaded', () => {
             if (timeoutLoadedAll != null) clearTimeout(timeoutLoadedAll)
             timeoutLoadedAll = setTimeout(() => {
-                setAccessButtonContent()
-                addAccessButtonEvent()
-                setSceneUpdateShadow()
+                setupThingsAfterLoaded()
             }, 1000)
         })
     })
@@ -60,6 +64,41 @@ function addAccessButtonEvent() {
     accessBtn.addEventListener('click', () => {
         loadingScreen.classList.add('hide')
         setSceneUpdateShadow()
+    })
+}
+
+function setOptionButtonsEvent() {
+    homeButtonEvent()
+    facebookButtonEvent()
+    screenshotButtonEvent()
+    lightToggleButtonEvent()
+}
+
+function homeButtonEvent() {
+    const loadingScreen = document.getElementById('loading-screen')
+    const homeButton = document.getElementById('home-btn')
+    homeButton.addEventListener('click', () => {
+        loadingScreen.classList.remove('hide')
+    })
+}
+
+function facebookButtonEvent() {
+    const facebookButton = document.getElementById('facebook-btn')
+    facebookButton.addEventListener('click', () => {
+        if (confirm("Sẽ có popup trang cá nhân Facebook của chúng tôi xuất hiện.\nBạn muốn ghé thăm chứ?")) {
+            window.open('https://www.facebook.com/ngohoang34', '_blank')
+            window.open('https://www.facebook.com/hoatrana3', '_blank')
+        }
+    })
+}
+
+function screenshotButtonEvent() {
+    const screenshotButton = document.getElementById('screenshot-btn')
+    screenshotButton.addEventListener('click', () => {
+        if (confirm("Quá trình screenshot sẽ cho bạn 2 ảnh: dạng perspective và dạng equirectangular để tải xuống.\nQuá trình sẽ mất khoảng vài giây, bạn muốn screenshot ngay chứ?")) {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+            document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+        }
     })
 }
 
