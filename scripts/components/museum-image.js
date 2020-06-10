@@ -10,9 +10,8 @@ AFRAME.registerComponent('museum-image', {
         }
     },
     init: function () {
-        const viewer = viewers[this.data.viewer]
-
         this.el.addEventListener('click', () => {
+            const viewer = viewers[this.data.viewer]
             viewer.show()
             if (this.data.index !== -1) viewer.view(this.data.index)
         })
