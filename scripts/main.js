@@ -10,6 +10,7 @@ function onBodyLoaded() {
     setOptionButtonsEvent()
 
     setTimeout(function () {
+        setupAllViewerThings()
         setupThingsAfterLoaded()
     }, 5000)
 }
@@ -35,6 +36,7 @@ function setAllModelLoadedEvent() {
         model.addEventListener('model-loaded', () => {
             if (timeoutLoadedAll != null) clearTimeout(timeoutLoadedAll)
             timeoutLoadedAll = setTimeout(() => {
+                setupAllViewerThings()
                 setupThingsAfterLoaded()
             }, 1000)
         })
@@ -86,8 +88,8 @@ function facebookButtonEvent() {
     const facebookButton = document.getElementById('facebook-btn')
     facebookButton.addEventListener('click', () => {
         if (confirm("Sẽ có popup trang cá nhân Facebook của chúng tôi xuất hiện.\nBạn muốn ghé thăm chứ?")) {
-            window.open('https://www.facebook.com/ngohoang34', '_blank')
             window.open('https://www.facebook.com/hoatrana3', '_blank')
+            window.open('https://www.facebook.com/ngohoang34', '_blank')
         }
     })
 }
