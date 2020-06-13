@@ -1,4 +1,16 @@
-alert('Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố.\nQuá trình tải và hiển thị dữ liệu ở lần đầu truy cập có thể mất khoảng 1 phút, kính mong bạn thông cảm...')
+alert(
+`Cảm ơn bạn đã ghé thăm triển lãm Hoài niệm Hà Nội phố.
+
+Triển lãm của chúng tôi đang trong quá trình phát triển phiên bản thử nghiệm.
+Do vậy, thời gian tải và hiển thị mô hình, dữ liệu có thể tốn nhiều thời gian 
+(tuỳ thuộc vào kết nối mạng và cấu hình máy tính của bạn).
+Ngoài ra, quá trình trải nghiệm có thể gặp một số lúc chưa được mượt mà...
+
+Để có trải nghiệm tốt nhất, hãy có một kết nối mạng tốt, 
+sử dụng trình duỵệt Google Chrome cũng như đeo tai nghe nữa nhé.
+
+Chúng tôi xin chân thành cảm ơn!`
+)
 
 function onBodyLoaded() {
     pauseAllVideo()
