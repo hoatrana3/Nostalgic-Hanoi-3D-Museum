@@ -286,6 +286,8 @@
             <a-assset-item id="wayGlb" src="assets/models/museum/way.glb"></a-assset-item>
             <a-assset-item id="roomGlb" src="assets/models/museum/room.glb"></a-assset-item>
 
+            <a-assset-item id="fountainGlb" src="assets/models/museum/fountain.glb"></a-assset-item>
+
             <a-assset-item id="televisionGlb" src="assets/models/museum/inside/television.glb"></a-assset-item>
             <a-assset-item id="woodenTableGlb" src="assets/models/museum/inside/wooden_table.glb"></a-assset-item>
             <a-assset-item id="glassTableGlb" src="assets/models/museum/inside/glass_table.glb"></a-assset-item>
@@ -406,12 +408,12 @@
         </a-assets>
 
         <!-- SKY -->
-        <a-sky src="#sky" rotation="0 180 0" scale="0.5 0.5 0.5"></a-sky>
+        <a-sky src="#sky" rotation="0 180 0"></a-sky>
 
         <!-- MUSEUM -->
-        <a-entity id="museum" position="0 -25 0" shadow>
+        <a-entity id="museum" position="0 -35 0" shadow>
             <!-- Humman's eyes -->
-            <a-entity movement-controls="speed: .5" position="0 2 22">
+            <a-entity movement-controls="speed: .5" position="0 2 85">
                 <a-entity id="mainCamera" camera look-controls="enabled: true; pointerLockEnabled: true">
                     <a-cursor color="#FFFFFF"></a-cursor>
                 </a-entity>
@@ -426,9 +428,14 @@
             <!-- Museum outside -->
             <a-entity id="outside">
                 <!-- Sounds -->
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="0 8 35"></a-entity>
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="35 8 -35"></a-entity>
-                <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true" position="-35 8 -35"></a-entity>
+                <a-entity id="bird-sounds" position="0 10 0">
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="0 0 65"></a-entity>
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="50 0 -35"></a-entity>
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="-50 0 -35"></a-entity>
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="50 0 -145"></a-entity>
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="-50 0 -145"></a-entity>
+                    <a-entity sound="src: #forestBirdSong; autoplay: true; loop: true; volume: 2" position="0 0 -200"></a-entity>
+                </a-entity>
 
                 <!-- Images Content -->
                 <a-entity gltf-model="#frameBlackLongGlb" position="-4.135 2.463 15.004" shadow museum-object
@@ -439,6 +446,9 @@
                     museum-image="index: 1; viewer: others">
                     <a-image src="#ot-backdrop" scale="1.695 2.597 1" position="0 0 -0.003"></a-image>
                 </a-entity>
+
+                <!-- Foundtain -->
+                <a-entity gltf-model="#fountainGlb" shadow position="0 0 55"></a-entity>
             </a-entity>
 
             <!-- Museum room front -->
@@ -765,7 +775,7 @@
         </a-entity>
 
         <!-- Sun light -->
-        <a-entity position="0 120 0" light="color: #FFF; intensity: 2; castShadow: true; target: #museum; type: spot">
+        <a-entity position="0 120 0" light="color: #FFF; intensity: 3; castShadow: true; target: #museum; type: spot">
         </a-entity>
 
         <!-- Ambient light -->
