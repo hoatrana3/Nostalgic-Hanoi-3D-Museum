@@ -294,6 +294,7 @@
             <a-assset-item id="tallTableGlb" src="assets/models/museum/inside/tall_table.glb"></a-assset-item>
             <a-assset-item id="gramophoneGlb" src="assets/models/museum/inside/gramophone.glb"></a-assset-item>
             <a-assset-item id="furnitureGlb" src="assets/models/museum/inside/furniture.glb"></a-assset-item>
+            <a-assset-item id="indoorPlantGlb" src="assets/models/museum/inside/indoor_plant.glb"></a-assset-item>
 
             <a-assset-item id="ganhHangRongGlb" src="assets/models/museum/inside/ganh_hang_rong.glb"></a-assset-item>
             <a-assset-item id="rickshawGlb" src="assets/models/museum/inside/rickshaw.glb"></a-assset-item>
@@ -448,13 +449,17 @@
                 </a-entity>
 
                 <!-- Front television model -->
-                <a-entity id="woodenTableRoomFront_1" gltf-model="#woodenTableGlb" position="0 0.295 -6">
-                    <a-entity id="television" gltf-model="#televisionGlb" position="0 0.845 0" scale="2 2 2" shadow
-                        museum-object>
+                <a-entity id="woodenTableRoomFront_1" gltf-model="#woodenTableGlb" position="0 0.163 -6">
+                    <a-entity id="television" gltf-model="#televisionGlb" position="0 0.845 0" scale="1.5 1.5 1.5"
+                        shadow museum-object>
                         <!-- Video Trailer -->
                         <a-video src="#trailerHanoi" width="4" height="3" position="0 0.493 0.042"
                             material="side: front" scale="0.387 0.290 0.359" video-control>
                         </a-video>
+                    </a-entity>
+                    <a-entity id="indoorPlantRoomFront_1" gltf-model="#indoorPlantGlb" position="2 0 0">
+                    </a-entity>
+                    <a-entity id="indoorPlantRoomFront_2" gltf-model="#indoorPlantGlb" position="-2 0 0">
                     </a-entity>
                 </a-entity>
 
