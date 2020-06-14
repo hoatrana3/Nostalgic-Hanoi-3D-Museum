@@ -7,7 +7,7 @@ Do vậy, thời gian tải và hiển thị mô hình, dữ liệu có thể t�
 Ngoài ra, quá trình trải nghiệm có thể gặp một số lúc chưa được mượt mà...
 
 Để có trải nghiệm tốt nhất, hãy có một kết nối mạng tốt, 
-sử dụng trình duỵệt Google Chrome cũng như đeo tai nghe nữa nhé.
+sử dụng trình duỵệt Firefox hoặc Google Chrome cũng như đeo tai nghe nữa nhé.
 
 Chúng tôi xin chân thành cảm ơn!`
 )
